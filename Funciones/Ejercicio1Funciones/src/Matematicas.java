@@ -7,7 +7,8 @@ public class Matematicas {
             numReves = (numReves * 10) + (num % 10);
             num /= 10;
         }
-        return (numReves == num); // Si 
+        return (numReves == num); // Si se cumple la condición, devolvera un true, si la condicion no se cumple
+                                  // devolvera un false
     }
 
     public static boolean esPrimo(int num1) {
@@ -22,5 +23,9 @@ public class Matematicas {
             return true;
         }
     }
-    
+    public static int siguientePrimo(int num1) {
+        
+        return num1;
+    }
+
 }
