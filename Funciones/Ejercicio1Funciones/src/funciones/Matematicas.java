@@ -1,7 +1,6 @@
+package funciones;
 public class Matematicas {
-    public static void main(String[] args) {
-    }
-
+    
     public static boolean esCapicua(int num, int numReves) {
         while (num > 0) {
             numReves = (numReves * 10) + (num % 10);
