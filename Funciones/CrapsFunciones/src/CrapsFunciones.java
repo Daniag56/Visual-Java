@@ -24,24 +24,26 @@ public class CrapsFunciones {
                 break;
             case 4, 5, 6, 8, 9, 10:
                 System.out.println("Tiene que seguir tirando ");
+                
+                int contador=0;
+                do {
+                     dado1 = Tirada.lanzaDados();
+                     dado2 = Tirada.lanzaDados();
+                     siguienteSuma = dado1 + dado2;
+                     System.out.println("El resultado de su tirada a sido " + siguienteSuma+" siga intentandolo");
+                     contador++;
+                } while ((sumaDados != siguienteSuma) && (siguienteSuma != 7));
+        
+                if (sumaDados == siguienteSuma) {
+                    System.out.println("Usted a ganado");
+                    cantidadGanada = cantidadDinero;
+                }else if(siguienteSuma == 7){
+                    System.out.println("Usted a perdido el juego");
+                    cantidadGanada = cantidadDinero;
+                }
                 break;
         }
-        int contador=0;
-        do {
-             dado1 = Tirada.lanzaDados();
-             dado2 = Tirada.lanzaDados();
-             siguienteSuma = dado1 + dado2;
-             System.out.println("El resultado de su tirada a sido " + siguienteSuma+" siga intentandolo");
-             contador++;
-        } while ((sumaDados != siguienteSuma) && (siguienteSuma != 7));
-
-        if (sumaDados == siguienteSuma) {
-            System.out.println("Usted a ganado");
-            cantidadGanada = cantidadDinero;
-        }else if(siguienteSuma == 7){
-            System.out.println("Usted a perdido el juego");
-            cantidadGanada = cantidadDinero;
-        }
+       
         
 
         sc.close();
