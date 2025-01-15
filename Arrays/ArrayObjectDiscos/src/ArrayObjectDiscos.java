@@ -11,6 +11,7 @@ public class ArrayObjectDiscos {
         System.out.println("2. Borrar disco");
         opcion = sc.nextInt();
         System.out.println(" ");
+        
         switch (opcion) {
             case 1:
                 for (int i = 0; i < 4; i++) {
@@ -34,13 +35,29 @@ public class ArrayObjectDiscos {
                 }
                 break;
             case 2:
-                break;
+            System.out.print("Introduzca el codigo del disco que desea borrar: ");
+            sc.nextLine();
+            codigo = sc.nextLine();
+            boolean encontrado = false;
+
+            for (int i = 0; i < Crud.length; i++) {  
+                if (Crud[i] != null && Crud[i].contains(codigo)) {
+                    Crud[i] = null; 
+                    encontrado = true;
+                    System.out.println("Disco con código " + codigo + " ha sido borrado.");
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                System.out.println("Disco no encontrado.");
+            }
+            break;
             default:
                 System.out.println("Opcion no encontrada");
                 break;
         }
 
         sc.close();
-
     }
 }
