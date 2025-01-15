@@ -45,6 +45,7 @@ public class ArrayObjectDiscos {
                     Crud[i] = null; 
                     encontrado = true;
                     System.out.println("Disco con código " + codigo + " ha sido borrado.");
+                    System.out.println();
                     break;
                 }
             }
