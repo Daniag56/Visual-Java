@@ -24,10 +24,14 @@ public class GestionAlmacen {
 
            
         }
+    }
 
+    public void mostrarProducto(){
         for (Articulo listado : articulos) {
             System.out.println(listado.toString());
         }
     }
+
+    
 
 }
