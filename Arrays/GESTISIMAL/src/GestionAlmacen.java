@@ -4,7 +4,7 @@ public class GestionAlmacen {
     Scanner sc = new Scanner(System.in);
     Articulo[] articulos = new Articulo[10];
 
-    public void introducirProducto() {
+    public void altaProducto() {
         for (int i = 0; i < articulos.length; i++) {
             System.out.print("Introduzca el codigo del articulo: ");
             int codigo = sc.nextInt();

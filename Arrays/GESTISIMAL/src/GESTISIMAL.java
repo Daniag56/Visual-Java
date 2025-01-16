@@ -17,9 +17,10 @@ public class GESTISIMAL {
 
         switch (opcion) {
             case 1:
-                gestion.introducirProducto();
+                gestion.mostrarProducto();
                 break;
             case 2:
+                gestion.altaProducto();
                 break;
             case 3:
                 break;
