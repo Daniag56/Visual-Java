@@ -12,11 +12,14 @@ public class Televisor extends Dispositivo implements Encendible{
 
     @Override
     public void encender() {
+        System.out.println("Encendiendo el televisor");
+        encendido = true;
 
     }
     @Override
     public void apagar() {
-
+        System.out.println("Apagando el televisor");
+        encendido = false;
     }
     @Override
     public String toString(){
