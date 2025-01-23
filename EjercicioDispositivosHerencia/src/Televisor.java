@@ -3,8 +3,9 @@ public class Televisor extends Dispositivo implements Encendible{
     private int diagonal;
     private String tecnologia;
     private boolean encendido;
-    public Televisor(int diagonal, String tecnologia, boolean encendido) {
-        super(null, 0);
+    private String canal = "";
+    public Televisor(int diagonal, String tecnologia,String marca, boolean encendido) {
+        super(null);
         this.diagonal = diagonal;
         this.tecnologia = tecnologia;
         encendido = false;
@@ -14,16 +15,16 @@ public class Televisor extends Dispositivo implements Encendible{
     public void encender() {
         System.out.println("Encendiendo el televisor");
         encendido = true;
-
+        canal = "canal 2";
     }
     @Override
     public void apagar() {
         System.out.println("Apagando el televisor");
         encendido = false;
+        canal = " ";
     }
     @Override
     public String toString(){
-        super.toString();
-        return "Diagonal: " + this.diagonal + "cm, Tecnologia: " + this.tecnologia +"esta encendido?"+encendido;
+        return "Diagonal: " + this.diagonal + "cm, Tecnologia: " + this.tecnologia+"marca:"+this.marca +"esta encendido?"+encendido;
     }
 }

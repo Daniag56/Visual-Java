@@ -1,21 +1,21 @@
 public abstract class Dispositivo {
-    private static int contadorDisp;
-    private String marca;
+    private static int contadorDisp = 0;
+    protected String marca;
 
-    public Dispositivo(String marca, int contadorDisp) {
+    public Dispositivo(String marca) {
         this.marca = marca;
-        Dispositivo.contadorDisp = contadorDisp;
+        contadorDisp++;
     }
 
-    public static int getContadorDisp(int contadorDisp) {
+    public static int getContadorDisp() {
         return contadorDisp;
     }
 
-    public static String getMarca(String marca) {
-        return marca;
+    public int setContadorDisp(int contadorDisp) {
+        return contadorDisp++;
     }
 
-    public String toString(){
-        return "Dispositivo [marca=" + marca + ", contadorDisp=" + contadorDisp + "]";
+    public String toString() {
+        return "Dispositivo [marca=" + marca + "]";
     }
 }
