@@ -1,6 +1,7 @@
 public abstract class CuentaBancaria implements Operaciones{
     protected double saldo;
     protected double interes;
+    protected String titular;
 
     public CuentaBancaria() {
         this.saldo = 0.0;
