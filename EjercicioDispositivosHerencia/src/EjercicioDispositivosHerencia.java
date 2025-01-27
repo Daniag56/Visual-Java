@@ -13,5 +13,6 @@ public class EjercicioDispositivosHerencia {
             ((Encendible)miDisp[i]).encender();
         }
         
+        
     }
 }
