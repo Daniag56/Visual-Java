@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class GestionBanco{
     private int opcion;
     CuentaBancaria[] cuentas = new CuentaBancaria[10];
-
+    CuentaBancaria gestion;
+    private double cantidad;
     public void menuGestion() {
         
         Scanner sc = new Scanner(System.in);
@@ -22,9 +23,10 @@ public class GestionBanco{
             case 1:
                 
             case 2:
-               
+               gestion.depositar(cantidad);
                 break;
             case 3:
+               gestion.retirar(cantidad);
                 break;
             case 4:
                 break;
