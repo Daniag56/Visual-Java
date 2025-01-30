@@ -16,7 +16,7 @@ public class EjercicioHashMap {
                 gestion.agregar("Malaga",2452);
                 break;
             case 2:
-
+                
                 break;
             default:
                 System.out.println("Introduzca una opcion valida");

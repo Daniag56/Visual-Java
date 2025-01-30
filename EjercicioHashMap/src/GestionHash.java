@@ -11,7 +11,6 @@ public class GestionHash {
             listamap = map.get(ciudad);
             if (!listamap.contains(codPostal)) {
                 listamap.add(codPostal);
-                map.put(ciudad, listamap);
             }
         }else{
             ArrayList<Integer> listamap = new ArrayList<Integer>();
