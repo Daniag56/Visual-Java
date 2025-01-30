@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+
 public class GestionHash {
     HashMap<String, ArrayList<Integer>> map = new HashMap<String, ArrayList<Integer>>();
 
-    public void agregar(String ciudad, int codPostal){
+    public void agregar(String ciudad, int codPostal) {
         if (map.containsKey(ciudad)) {
             ArrayList<Integer> listamap;
             listamap = map.get(ciudad);
@@ -12,6 +13,15 @@ public class GestionHash {
                 listamap.add(codPostal);
                 map.put(ciudad, listamap);
             }
+        }else{
+            ArrayList<Integer> listamap = new ArrayList<Integer>();
+            map.put(ciudad, listamap);
         }
     }
+
+    public void mostrar(){
+        
+    }
+
+    
 }

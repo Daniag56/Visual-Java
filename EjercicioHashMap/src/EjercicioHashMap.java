@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class EjercicioHashMap {
@@ -11,11 +9,11 @@ public class EjercicioHashMap {
         System.out.print("1. Introducir datos en el HashMap");
         System.out.print("2. Mostrar datos del HashMap");
         int opcion = sc.nextInt();
-       
+        GestionHash gestion = new GestionHash();
 
         switch (opcion) {
             case 1:
-                
+                gestion.agregar("Malaga",2452);
                 break;
             case 2:
 
