@@ -39,6 +39,7 @@ public class EjercicioHashMap {
                     System.out.println("Introduzca la ciudad para mostrar el cp: ");
                     ciudad = sc.nextLine();
                     gestion.MostrarCpProvincia(ciudad);
+                    System.out.println();
                     break;
                 default:
                     System.out.println("Adios");
