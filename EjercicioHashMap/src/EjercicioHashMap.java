@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class EjercicioHashMap {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        GestionHash gestionar = new GestionHash();
+        GestionHash gestion = new GestionHash();
         String ciudad = "";
         int codPostal = 0;
 
@@ -24,15 +24,20 @@ public class EjercicioHashMap {
                     System.out.println("Introduzca el codigo postal de la ciudad: ");
                     codPostal = sc.nextInt();
                     sc.nextLine();
-                    gestionar.agregar(ciudad, codPostal);
+                    gestion.agregar(ciudad, codPostal);
                     break;
                 case 2:
-                    gestionar.mostrar();
+                    gestion.mostrar();
                     break;
                 case 3:
                     System.out.println("Introduzca la ciudad a borrar: ");
                     ciudad = sc.nextLine();
-                    gestionar.borrar(ciudad);
+                    gestion.borrar(ciudad);
+                case 4:
+                    System.out.println("Introduzca la ciudad para mostrar el cp: ");
+                    ciudad = sc.nextLine();
+                    gestion.MostrarCpProvincia(ciudad);
+                break;
                 default:
                     System.out.println("Adios");
                     break;
