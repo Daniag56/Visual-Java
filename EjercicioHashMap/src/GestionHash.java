@@ -7,8 +7,6 @@ public class GestionHash {
     HashMap<String, ArrayList<Integer>> map = new HashMap<String, ArrayList<Integer>>();
 
     public void agregar(String ciudad, int codPostal) {
-        ciudad = "";
-        codPostal = 0;
         if (!map.containsKey(ciudad)) {
             ArrayList<Integer> listamap = new ArrayList<>();
             listamap.add(codPostal);
@@ -25,6 +23,7 @@ public class GestionHash {
     public boolean borrar(String ciudad) {
         if (map.containsKey(ciudad)) {
             map.remove(ciudad);
+            System.out.println("El valor ha sido borrado");
             return true;
         }
         return false;
@@ -35,6 +34,9 @@ public class GestionHash {
             System.out.print("La provincia: " + mapeable.getKey() + " tiene los codigos postales: ");
             for (int i = 0; i < mapeable.getValue().size(); i++) {
                 System.out.println(mapeable.getValue().get(i));
+                if (i<mapeable.getValue().size()-1) {
+                    System.out.print(", ");
+                }
             }
         }
     }
