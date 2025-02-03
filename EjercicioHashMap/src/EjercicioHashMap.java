@@ -26,7 +26,6 @@ public class EjercicioHashMap {
                     codPostal = sc.nextInt();
                     sc.nextLine();
                     gestion.agregar(ciudad, codPostal);
-                    System.out.println();
                     break;
                 case 2:
                     gestion.mostrar();
