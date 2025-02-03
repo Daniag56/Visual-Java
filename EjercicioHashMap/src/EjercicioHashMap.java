@@ -14,7 +14,8 @@ public class EjercicioHashMap {
             System.out.println("1. Introducir datos en el HashMap");
             System.out.println("2. Mostrar datos del HashMap");
             System.out.println("3. Borrado");
-            System.out.println("4. Salir");
+            System.out.println("4. Mostrar cp buscando ciudad");
+            System.out.println("5. salir");
             opcion = sc.nextInt();
             sc.nextLine();
             switch (opcion) {
@@ -33,16 +34,17 @@ public class EjercicioHashMap {
                     System.out.println("Introduzca la ciudad a borrar: ");
                     ciudad = sc.nextLine();
                     gestion.borrar(ciudad);
+                    break;
                 case 4:
                     System.out.println("Introduzca la ciudad para mostrar el cp: ");
                     ciudad = sc.nextLine();
                     gestion.MostrarCpProvincia(ciudad);
-                break;
+                    break;
                 default:
                     System.out.println("Adios");
                     break;
             }
-        } while (opcion != 4);
+        } while (opcion != 5);
 
         sc.close();
     }

@@ -44,7 +44,7 @@ public class GestionHash {
     public void MostrarCpProvincia(String ciudad) {
         if (map.containsKey(ciudad)) {
             ArrayList<Integer> listamap = map.get(ciudad);
-            System.out.print("Provincia: " + ciudad + "tiene los cp:");
+            System.out.print("Provincia: " + ciudad + " tiene los cp:");
             for (Integer miCp : listamap) {
                 System.out.print(miCp + "");
             }
