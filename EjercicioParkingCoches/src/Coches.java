@@ -8,16 +8,23 @@ public class Coches implements Serializable{
         this.marca = marca;
         this.añoFabricacion = añoFabricacion;
     }
-    @Override
-    public void serialize(){
-
-    }
-    @Override
-    public  void deserializable(){
-
-    }
+   
 
     public String toString(){
         return "Matricula: " + matricula + " " + " Marca: " + marca + " Año de fabricacion: " + añoFabricacion;
+    }
+
+
+    @Override
+    public String serialize() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'serialize'");
+    }
+
+
+    @Override
+    public void deserializable(String datos) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deserializable'");
     }
 }

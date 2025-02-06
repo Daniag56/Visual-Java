@@ -1,5 +1,5 @@
 public interface Serializable{
     
-    void serialize();
-    void deserializable();
+    public String serialize();
+    public void deserializable(String datos);
 }
