@@ -12,6 +12,7 @@ public class Coches implements Serializable {
     public Coches(String linea) {
         this.deserializable(linea);
     }
+
     @Override
     public String toString() {
         return "Matricula: " + matricula + " " + " Marca: " + marca + " Año de fabricacion: " + añoFabricacion;
@@ -27,6 +28,11 @@ public class Coches implements Serializable {
         String[] datos = lineas.split(";");
         this.matricula = datos[0];
         this.marca = datos[1];
-        this.añoFabricacion = Integer.parseInt(datos[2]);
+        try {
+            this.añoFabricacion = Integer.parseInt(datos[2]);
+        } catch (Exception e) {
+            this.añoFabricacion = 0;
+        }
+
     }
 }
