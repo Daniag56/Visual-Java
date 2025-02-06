@@ -1,4 +1,4 @@
-public class EjercicioParkingCoches {
+public class Concesionario {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
     }

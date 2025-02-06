@@ -1,30 +1,32 @@
-public class Coches implements Serializable{
+public class Coches implements Serializable {
     private String matricula;
     private String marca;
     private int añoFabricacion;
 
-    public void Coche(String matricula,String marca,int añoFabricacion){
+    public Coches(String matricula, String marca, int añoFabricacion) {
         this.matricula = matricula;
         this.marca = marca;
         this.añoFabricacion = añoFabricacion;
     }
-   
 
-    public String toString(){
+    public Coches(String linea) {
+        this.deserializable(linea);
+    }
+    @Override
+    public String toString() {
         return "Matricula: " + matricula + " " + " Marca: " + marca + " Año de fabricacion: " + añoFabricacion;
     }
 
-
     @Override
     public String serialize() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'serialize'");
+        return String.format("%s;%s;%d", this.matricula, this.marca, this.añoFabricacion);
     }
 
-
     @Override
-    public void deserializable(String datos) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deserializable'");
+    public void deserializable(String lineas) {
+        String[] datos = lineas.split(";");
+        this.matricula = datos[0];
+        this.marca = datos[1];
+        this.añoFabricacion = Integer.parseInt(datos[2]);
     }
 }
