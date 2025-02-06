@@ -30,7 +30,11 @@ public class GestionCoches implements Crud<Coches> {
 
     @Override
     public Coches recuperarUno(String id) {
-        
+        try {
+            
+        } catch (Exception ioe) {
+            System.out.println(ioe.getMessage());
+        }
         return null;
     }
 
