@@ -19,6 +19,7 @@ public class GestionCoches implements Crud<Coches> {
             while ((linea = br.readLine()) != null) {
                 Coches coche1 = new Coches(linea);
                 listaCoche.add(coche1);
+                System.out.println();
             }
             br.close();
         } catch (Exception ioe) {
