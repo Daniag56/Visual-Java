@@ -1,4 +1,4 @@
-public class Cpifp implements Serializable {
+public class Cpifp<K> implements Serializable<K> {
     private String nombre;
     private String direccion;
     private int telefono;

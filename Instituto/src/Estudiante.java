@@ -1,4 +1,4 @@
-public class Estudiante {
+public class Estudiante{
     private int id;
     private String nombre;
 
@@ -6,7 +6,7 @@ public class Estudiante {
         this.id = id;
         this.nombre = nombre;
     }
-
+    
     public String toString(){
         return "Estudiante [id=" + id + ", nombre=" + nombre + "]";
     }

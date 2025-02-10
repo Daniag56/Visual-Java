@@ -1,4 +1,4 @@
 public interface Serializable<K> {
     public String serializar(K dato);
-    public K deserializar(String data);
+    public Estudiante deserializar(String data);
 }
