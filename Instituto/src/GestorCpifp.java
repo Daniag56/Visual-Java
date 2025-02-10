@@ -8,24 +8,20 @@ import java.io.IOException;
 
 public class GestorCpifp {
 
+    @SuppressWarnings("rawtypes")
     Cpifp miCentro = new Cpifp("Juan", "hfvb", 77675748, "args[0]");
     private File misEstudiantes;
 
     public boolean añadir(int id, String nombre) {
-        if (obtenerEst(miCentro.serializar(nombre)) != null) {
-            System.out.println("El coche ya estaba registrado y no se ha añadido al fichero");
-            return true;
-        } else {
-            try {
-                BufferedWriter bw = new BufferedWriter(new FileWriter(misEstudiantes, true));
-                bw.write(miCentro.serializar() + "\n");
-                bw.close();
-            } catch (FileNotFoundException fnfe) {
-                System.out.println(fnfe.getMessage());
-            } catch (IOException ioe) {
-                System.out.println(ioe.getMessage());
-            }
-            return false;
+
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(misEstudiantes, true));
+            bw.write(miCentro.serializar(id) + "\n");
+            bw.close();
+        } catch (FileNotFoundException fnfe) {
+            System.out.println(fnfe.getMessage());
+        } catch (IOException ioe) {
+            System.out.println(ioe.getMessage());
         }
         return false;
 
@@ -39,7 +35,7 @@ public class GestorCpifp {
         return false;
     }
 
-    public String obtenerEst() {
+    public String obtenerEst(int id) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(misEstudiantes));
             String linea = "";
