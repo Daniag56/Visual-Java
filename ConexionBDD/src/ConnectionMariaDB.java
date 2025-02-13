@@ -27,6 +27,8 @@ public class ConnectionMariaDB {
                 int edad = resultado.getInt("edad");
                 String localidad = resultado.getString("localidad");
 
+                System.out.println("ID socio: " + socioID + ", Nombre: "+nombre+", Estatura: "+estatura+", Edad: " +edad+", Localidad: "+localidad);
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,9 +37,9 @@ public class ConnectionMariaDB {
                 if (resultado != null)
                     resultado.close();
                 if (sentencia != null)
-                    sentencia.close();
+                    resultado.close();
                 if (connection != null)
-                    connection.close();
+                    resultado.close();
             } catch (Exception e) {
                 e.printStackTrace();
 
