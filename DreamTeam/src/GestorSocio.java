@@ -120,7 +120,7 @@ public class GestorSocio implements CRUD<Socio> {
     }
 
     @Override
-    public boolean create(Socio model) throws SQLException {
+    public boolean create(Socio socio) throws SQLException {
         int socioID = socio1.getId();
         String nombre = socio1.getNombre();
         int edad = socio1.getEdad();
@@ -144,16 +144,16 @@ public class GestorSocio implements CRUD<Socio> {
     }
 
     @Override
-    public boolean delete(Socio model) {
+    public boolean delete(Socio socio) {
         String query = "DELETE FROM socios WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setInt(1, model.getId());
+            stmt.setInt(1, socio.getId());
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Socio eliminado correctamente.");
                 return true;
             } else {
-                System.out.println("No se encontró ningún socio con el ID: " + model.getId());
+                System.out.println("No se encontró ningún socio con el ID: " + socio.getId());
                 return false;
             }
         } catch (SQLException e) {

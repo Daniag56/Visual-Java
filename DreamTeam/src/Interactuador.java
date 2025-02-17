@@ -11,7 +11,7 @@ public interface Interactuador {
     Scanner sc = new Scanner(System.in);
 
     public static void consultaFiltrada() {
-        ArrayList<Socio> lista;
+        ArrayList<Socio> lista = new ArrayList<>();
         System.out.println("Introduce la columna por la que filtrar: ");
         String columna = sc.nextLine().toLowerCase();
 
@@ -67,21 +67,53 @@ public interface Interactuador {
     }
 
     public static void consultarPorId() {
-        ArrayList<Socio> lista = null;
         System.out.print("Introduce la id del socio: ");
         int socioID = solicitarEntero();
         try {
-            lista = miGestor.requestAM(contraseña);
-            if (lista.isEmpty())
+            Socio socio = miGestor.requestById(socioID);
+            if (socio != null)
                 System.out.println("No se encuentra ningun socio");
-            for (Socio socio : lista) {
-                if (socio.getId() == socioID) {
-                    System.out.println(socio);
-                }
-            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static void modificar(){
+        System.out.print("Introduce la id del socio: ");
+        int socioID = solicitarEntero();
+        try {
+            miGestor.update(null);
+            if (socioID == 0) {
+                System.out.println("Socio no encontrado");
+            }
+            System.out.println("Se ha modificado el socio");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void crear(){
+        System.out.println("Introduce el id del socio: ");
+        int socioID = solicitarEntero();
+        Socio socio1 = new Socio(socioID,"",0,0,"");
+        try {
+            miGestor.create(socio1);
+            System.out.println("Socio creado");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void eliminar(){
+        System.out.print("Introduce la id del socio: ");
+        int socioID = solicitarEntero();
+        try {
+            miGestor.delete(null);
+            if (socioID == 0) {
+                System.out.println("Socio no encontrado");
+                }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+            
     }
 
     private static int solicitarEntero() {
