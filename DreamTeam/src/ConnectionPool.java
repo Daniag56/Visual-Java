@@ -1,15 +1,13 @@
-import java.sql.Statement;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ConnectionPool {
     private ArrayList<Connection> conn;
-    private String url = "jdbc:mariadb://localhost:3306/baloncesto";
-    private String username = "root";
-    private String contraseña = "";
+    private String url;
+    private String username;
+    private String contraseña;
 
   
 
@@ -19,44 +17,34 @@ public class ConnectionPool {
         this.contraseña = contraseña;
     }
 
-    public ArrayList<Connection> getConn() {
-        return conn;
-    }
+    
 
-    public void conexion() {
-        Connection connection = null;
-        Statement sentencia = null;
-        ResultSet resultado = null;
-
+    public Connection getConnection(){
+        Connection conn = null;
         try {
-            connection = DriverManager.getConnection(url, username, contraseña);
-            sentencia = connection.createStatement();
-
-            String query = "SELECT * FROM socio";
-            resultado = sentencia.executeQuery(query);
-
-            while (resultado.next()) {
-                int socioID = resultado.getInt("socioID");
-                String nombre = resultado.getString("nombre");
-                int estatura = resultado.getInt("estatura");
-                int edad = resultado.getInt("edad");
-                String localidad = resultado.getString("localidad");
-
-                System.out.println("ID socio: " + socioID + ", Nombre: " + nombre + ", Estatura: " + estatura
-                        + ", Edad: " + edad + ", Localidad: " + localidad);
-
-            }
+            // Obtiene una conexión con los parámetros de conexión dados
+            conn = DriverManager.getConnection(this.url, this.username, this.contraseña);
+            // Si obtenemos conexión la añadimos en el array de conexiones
+            if(conn!=null)
+                this.conn.add(conn);    
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
+        //Devolvemos la conexión establecida si se ha podido establecer
+        return conn; //Puede ser null si no hay conexión establecida
     }
 
-    public void CloseAll(Connection connection, Statement sentencia, ResultSet resultado) throws SQLException {
-        if (resultado != null)
-            resultado.close();
-        if (sentencia != null)
-            resultado.close();
-        if (connection != null)
-            resultado.close();
+    public void closeAll(){
+        //Cerramos una a una las conexiones establecidas
+        for(Connection conns: this.conn){
+            try {
+                if(conn!=null)
+                    conns.close();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        //Limpiamos el array de conexiones
+        this.conn.clear();
     }
 }

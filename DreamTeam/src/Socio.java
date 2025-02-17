@@ -1,11 +1,11 @@
 public class Socio {
     private int id;
     private String nombre;
-    private String estatura;
+    private int estatura;
     private int edad;
     private String localidad;
 
-    public Socio(int id, String nombre, String estatura, int edad, String localidad) {
+    public Socio(int id, String nombre, int estatura, int edad, String localidad) {
         this.id = id;
         this.nombre = nombre;
         this.estatura = estatura;
@@ -29,11 +29,11 @@ public class Socio {
         this.nombre = nombre;
     }
 
-    public String getEstatura() {
+    public int getEstatura() {
         return estatura;
     }
 
-    public void setEstatura(String estatura) {
+    public void setEstatura(int estatura) {
         this.estatura = estatura;
     }
 

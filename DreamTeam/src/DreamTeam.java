@@ -1,5 +1,9 @@
-public class DreamTeam {
-    public static void main(String[] args) throws Exception {
-        
+import java.util.Scanner;
+
+public class DreamTeam implements Interactuador{
+    public static void main(String[] args) throws Exception{
+      Scanner sc = new Scanner(System.in);  
+      
+      Interactuador.consultaFiltrada();
     }
 }
