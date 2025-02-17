@@ -93,10 +93,20 @@ public interface Interactuador {
     }
     public static void crear(){
         System.out.println("Introduce el id del socio: ");
-        int socioID = solicitarEntero();
-        Socio socio1 = new Socio(socioID,"",0,0,"");
+        int socioID = sc.nextInt();
+        System.out.println("Introduzca el nombre: ");
+        sc.nextLine();
+        String nombre = sc.nextLine();
+        System.out.println("Introduzca la estatura: ");
+        int estatura = sc.nextInt();
+        System.out.println("Introduzca la edad: ");
+        int edad = sc.nextInt();
+        System.out.println("Introduzca la localidad: ");
+        sc.nextLine();
+        String localidad = sc.nextLine();
+        
         try {
-            miGestor.create(socio1);
+            miGestor.create(new Socio(socioID, nombre, estatura, edad, localidad));
             System.out.println("Socio creado");
         } catch (Exception e) {
             System.out.println(e.getMessage());

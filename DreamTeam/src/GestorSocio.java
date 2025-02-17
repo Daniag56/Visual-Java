@@ -123,6 +123,7 @@ public class GestorSocio implements CRUD<Socio> {
     public boolean create(Socio socio) throws SQLException {
         int socioID = socio1.getId();
         String nombre = socio1.getNombre();
+        int estatura = socio1.getEstatura();
         int edad = socio1.getEdad();
         String localidad = socio1.getLocalidad();
 
@@ -130,6 +131,7 @@ public class GestorSocio implements CRUD<Socio> {
         try (PreparedStatement stmt = this.conn.prepareStatement(sqlQuery)) {
             stmt.setInt(1, socioID);
             stmt.setString(2, nombre);
+            stmt.setInt(3, estatura);
             stmt.setInt(4, edad);
             stmt.setString(5, localidad);
 

@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.util.ArrayList;
 
 public class ConnectionPool {
-    private ArrayList<Connection> conn;
+    private ArrayList<Connection> conn = new ArrayList<Connection>();
     private String url;
     private String username;
     private String contraseña;
