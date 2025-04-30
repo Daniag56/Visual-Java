@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class ContraseñaSegura {
-    public static final String RED_BRIGHT = "\033[0;91m";  // Rojo
-    public static final String GREEN_BRIGHT = "\033[0;92m";  // Verde
-    public static final String YELLOW_BRIGHT = "\033[0;93m";  // Amarillo
-    public static final String RESET = "\033[0m";  // Reset de color
+    public static final String RED_BRIGHT = "\033[0;91m";  
+    public static final String GREEN_BRIGHT = "\033[0;92m";  
+    public static final String YELLOW_BRIGHT = "\033[0;93m";  
+    public static final String RESET = "\033[0m";  
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
