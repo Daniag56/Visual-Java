@@ -21,7 +21,6 @@ public class ContraseñaSegura {
                 intentos++;
                 continue;
             }
-
             boolean tieneMinuscula = false;
             boolean tieneMayuscula = false;
             boolean tieneNumero = false;
