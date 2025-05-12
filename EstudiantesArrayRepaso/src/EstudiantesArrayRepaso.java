@@ -65,7 +65,7 @@ public class EstudiantesArrayRepaso {
                     scanner.close();
                     return;
                 default:
-                    
+                    System.out.println("Opción no válida.");
             }
         }
     }
