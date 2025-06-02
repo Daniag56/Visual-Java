@@ -14,7 +14,6 @@ public class GestorEstudiante {
 
     public void agregarEstudiante(String nombre) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el nombre del estudiante");
         String nombreEstudiante = sc.nextLine();
         Estudiante estudiante1 = new Estudiante(nombre);
         estudiantes[cantidadEstudiantes] = estudiante1;
