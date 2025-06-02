@@ -26,13 +26,14 @@ public class Estudiante {
             System.out.println("Capacidad máxima alcanzada. No se puede agregar más notas.");
         }
     }
-    public void  calcularPromedio(double[] notas, int cantidadNotas) {
+    public double calcularPromedio() {
         int suma = 0;
         for (double n : notas) {
             System.out.println(n +" ");
             suma += n;
         }
         System.out.println("El promedio de las notas es: "+suma/cantidadNotas);
+        return suma/cantidadNotas;
     }
 
     @Override
