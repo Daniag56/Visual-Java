@@ -17,7 +17,7 @@ public class GestorEstudiantesRepaso2{
             System.out.println("5. Buscar un estudiante por su nombre.");
             System.out.println("6. Salir.");
 
-            option = Integer.parseInt(System.console().readLine());
+            option = sc.nextInt();
 
             switch (option) {
                 case 1:

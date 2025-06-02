@@ -2,9 +2,12 @@ import java.util.Scanner;
 
 
 
+
+
 public class GestorEstudiante {
-    private Estudiante[]estudiantes;
-    private int cantidadEstudiantes;
+     static int maxEstudiantes = 20;
+    Estudiante estudiantes[] = new Estudiante[maxEstudiantes];
+    int cantidadEstudiantes = 0;
 
 
     public GestorEstudiante() { 
@@ -13,11 +16,16 @@ public class GestorEstudiante {
     }
 
     public void agregarEstudiante(String nombre) {
-        Scanner sc = new Scanner(System.in);
-        String nombreEstudiante = sc.nextLine();
-        Estudiante estudiante1 = new Estudiante(nombre);
-        estudiantes[cantidadEstudiantes] = estudiante1;
-        sc.close();
+      if ( cantidadEstudiantes < maxEstudiantes ) {
+            if (buscarEstudiante(nombre) == null) { // Compruebo que no haya mas estudiantes con ese nombre
+                System.out.println(Colours.GREEN_BRIGHT + nombre + " se une a la plantilla." + Colours.RESET);
+                estudiantes[cantidadEstudiantes] = new Estudiante(nombre);
+                cantidadEstudiantes++;
+            } else
+                System.out.println(
+                        Colours.YELLOW_BRIGHT + "Lo sentimos, ya tenemos un estudiante con ese nombre." + Colours.RESET);
+        } else
+            System.out.println(Colours.YELLOW_BRIGHT + "No hay espacio para el alumno " + nombre + Colours.RESET);
     }
 
     public Estudiante buscarEstudiante(String nombre) {
