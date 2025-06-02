@@ -22,13 +22,13 @@ public class GestorEstudiantesRepaso2{
             switch (option) {
                 case 1:
                     System.out.println("¿Cuál es el nombre del estudiante?");
-                    nombre = System.console().readLine();
+                    nombre = sc.nextLine();
                     sistema.agregarEstudiante(nombre);
                     break;
 
                 case 2:
                     System.out.println("¿A qué estudiante desea agregarle una nota?");
-                    nombre = System.console().readLine();
+                    nombre = sc.nextLine();
                     nota = Colours.introducirReal();
                     sistema.agregarNotaAEstudiante(nombre, nota);;
                     break;
@@ -44,7 +44,7 @@ public class GestorEstudiantesRepaso2{
 
                 case 5:
                     System.out.println("¿Cuál es el nombre del estudiante?");
-                    nombre = System.console().readLine();
+                    nombre = sc.nextLine();
                     System.out.println(sistema.buscarEstudiante(nombre));
                     break;
 
