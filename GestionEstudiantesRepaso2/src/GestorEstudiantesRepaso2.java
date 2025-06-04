@@ -18,7 +18,7 @@ public class GestorEstudiantesRepaso2{
             System.out.println("6. Salir.");
 
             option = sc.nextInt();
-
+            sc.nextLine();
             switch (option) {
                 case 1:
                     System.out.println("¿Cuál es el nombre del estudiante?");
@@ -58,6 +58,7 @@ public class GestorEstudiantesRepaso2{
                     break;
             }
             System.out.println("Pulse intro para continuar");
+            sc.nextLine();
         } while (option != 6);// me aseguo de controlar cualquier valor
 
         sc.close();

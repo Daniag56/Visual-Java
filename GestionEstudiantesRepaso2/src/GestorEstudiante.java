@@ -38,13 +38,9 @@ public class GestorEstudiante {
     }
     
     public void agregarNotaAEstudiante(String nombre, double notas) {
-       for(int i = 0; i< cantidadEstudiantes; i++) {
-        if (estudiantes[i] != null && estudiantes[i].getNombre().equals(nombre)) {
-            System.out.println("Estudiante encontrado: "+estudiantes[i].getNombre());
-        }else{
-            System.out.println("Estudiante no encontrado");
-        }
-       }
+      if (buscarEstudiante(nombre) != null) {
+        buscarEstudiante(nombre).agregarNota(notas);
+      }
     }
 
     public void mostrarEstudiante(){
